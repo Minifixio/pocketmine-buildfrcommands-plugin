@@ -1,0 +1,5 @@
+name: Buildfrcommands
+main: Minifixio\buildfr\Buildfr
+version: 0.0.1
+api: [1.0.0, 1.1.0]
+description: Voici un plugin de Minifixio vous permettant de recolter certaines informations par l'intermédiaire d'une commande.

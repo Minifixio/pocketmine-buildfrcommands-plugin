@@ -1,0 +1,1 @@
+Voici un plugin de Minifixio vous permettant de recolter certaines informations par l'intermédiaire d'une commande.
