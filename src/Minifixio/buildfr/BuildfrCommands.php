@@ -35,11 +35,16 @@ class BuildfrCommands extends Command implements PluginIdentifiableCommand{
 		  $sender->sendMessage("Utiliser la commande dans le jeu");
 		  return true;
 		}
+		$onlinePlayers = $this->plugin->getServer()->getOnlinePlayers();
+		$playerNames = "";
+		foreach ($onlinePlayers as $player){
+			$playerNames = $playerNames . " / " . $player->getName();
+		}
 		
 		$sender->sendMessage(" ");
 		$sender->sendMessage("=======>BUILDFR<=======");
 		$sender->sendMessage("Bienvenue sur BuildFR !");
-		$sender->sendMessage("Il y a sur le serveur : " . $sender->getPlayer()->getName());
+		$sender->sendMessage("Il y a sur le serveur : " . $playerNames);
 		$sender->sendMessage("=======================");
 		$sender->sendMessage("Sur BuildFR il y a :");
 		$sender->sendMessage("- Du PvP , du jump , du build et du fun !!");
@@ -47,6 +52,7 @@ class BuildfrCommands extends Command implements PluginIdentifiableCommand{
 		$sender->sendMessage("> Pour te teleporter dans des mondes , tape sur les panneaux!");
 		$sender->sendMessage("> Pour te stuffer , tape sur les panneaux au spawn sous les blocks! ");
 		$sender->sendMessage("=======>BON JEU<=======");
+		$sender->sendMessage(" ");
 		return true;
     }
 }

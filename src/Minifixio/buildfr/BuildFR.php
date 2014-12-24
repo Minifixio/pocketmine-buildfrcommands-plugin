@@ -30,15 +30,17 @@ class BuildFR extends PluginBase  implements Listener{
     public function onPlayerJoin(PlayerJoinEvent $joinEvent){
     	$onlinePlayers = count($this->getServer()->getOnlinePlayers());
     	$maxPlayers = $this->getServer()->getMaxPlayers();
-    	$this->logOnConsole("Bienvenue sur BuildFR , pour plus d'informations, tape : /buildfr!");
-        $this->logOnConsole("Il y a sur le serveur : " . $onlinePlayers . "/" . $maxPlayers . " joueurs");
+    	$player = $joinEvent->getPlayer();
+    	$player->sendMessage(">---------------------<");
+    	$player->sendMessage("- Bienvenue sur BuildFR , pour plus d'informations, tape : /buildfr!");
+        $player->sendMessage("- Il y a sur le serveur : " . $onlinePlayers . "/" . $maxPlayers . " joueurs");
+        $player->sendMessage(">---------------------<");
     }
     
      
     
     private function logOnConsole($message){
     	$this->getServer()->broadcastMessage($message);
-    	
     }
 
 }
